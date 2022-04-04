@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content%}
+<table id="data" ckass="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Last Seen</th>
+            <th>Physical Device</th>
+            <th>Time of Mapping</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for logicalDevice in logicalDevices %}
+        <tr>
+            <td>{{ logicalDevice.id }}</td>
+            <td>{{ logicalDevice.name }}</td>
+            <td>{{ logicalDevice.location }}</td>
+            <td>{{ logicalDevice.last_seen }}</td>
+            <td>{{ logicalDevice.physical_device }}</td>
+            <td>{{ logicalDevice.time_of_mapping }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
